@@ -45,9 +45,6 @@ INSTALLED_APPS = [
 
     # API
     'rest_framework',
-
-    # ReactJS
-    'webpack_loader',
 ]
 
 MIDDLEWARE = [

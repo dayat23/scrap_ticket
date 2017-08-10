@@ -42,6 +42,12 @@ INSTALLED_APPS = [
     # App
     'web',
     'dashboard',
+
+    # API
+    'rest_framework',
+
+    # ReactJS
+    'webpack_loader',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (

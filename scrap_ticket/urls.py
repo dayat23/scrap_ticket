@@ -13,9 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
+from django.conf.urls.static import static
+from django.conf import settings
 from django.contrib import admin
+from django.contrib.auth.views import login, logout
 
 urlpatterns = [
+    url(r'^', include('web.urls')),
+    url(r'^dashboard/', include('dashboard.urls', namespace='dashboard', app_name='dashboard')),
+
+    url(r'^login/$', login, {'redirect_authenticated_user': True, 'template_name': 'login.html'}, name='login'),
+    url(r'^logout/$', logout, {'next_page': '/login/'}, name='logout'),
+
     url(r'^admin/', admin.site.urls),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

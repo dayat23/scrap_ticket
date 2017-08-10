@@ -144,9 +144,9 @@ for rs in redis_socks:
 
 Q_CLUSTER = {
     'name': 'scrap_ticket',
-    'workers': 1,
+    'workers': 4,
     'recycle': 500,
-    'timeout': 7200,
+    'timeout': 300,
     'save_limit': 50,
     'queue_limit': 500,
     'cpu_affinity': 1,
@@ -157,3 +157,5 @@ Q_CLUSTER = {
         'unix_socket_path': redis_sock
     }
 }
+
+

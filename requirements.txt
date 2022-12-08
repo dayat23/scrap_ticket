@@ -1,7 +1,7 @@
 arrow==0.10.0
 beautifulsoup4==4.6.0
 blessed==1.14.2
-certifi==2017.7.27.1
+certifi==2022.12.7
 chardet==3.0.4
 Django==1.11.3
 django-autoslug==1.9.3
